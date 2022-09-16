@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,8 +12,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//Route::get('/', function () {
+////    return view('welcome');
+//    return 'aaa';
+//});
+
+Route::group(['namespace' => 'App\Http\Controllers\Main'], function () {
+    Route::get('/contacts', 'ContactsController');
+    Route::get('/', 'IndexController');
+
 });
 
 Auth::routes();

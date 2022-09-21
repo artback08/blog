@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('main.layouts.main')
 @section('content')
 <body id="top">
 <div class="wrapper row2">

@@ -4,9 +4,9 @@
     <title>Blog</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link href="{{ asset('layout/styles/layout.css') }}" rel="stylesheet" type="text/css" media="all">
+    <link href="{{ asset('main/styles/layout.css') }}" rel="stylesheet" type="text/css" media="all">
 </head>
-<div class="bgded overlay" style="background-image:url('{{ asset('layout/images/demo/backgrounds/01.png') }}');">
+<div class="bgded overlay" style="background-image:url('{{ asset('main/images/demo/backgrounds/01.png') }}');">
     <!-- ################################################################################################ -->
     <div class="wrapper row1">
         <header id="header" class="hoc clear">
@@ -62,7 +62,7 @@
 
 @yield('content')
 
-<div class="wrapper row4 bgded overlay" style="background-image:url('{{ asset('layout/images/demo/backgrounds/02.png') }}');">
+<div class="wrapper row4 bgded overlay" style="background-image:url('{{ asset('main/images/demo/backgrounds/02.png') }}');">
     <footer id="footer" class="hoc clear">
         <!-- ################################################################################################ -->
         <div class="one_third first">
@@ -106,7 +106,7 @@
         </div>
         <div class="one_third">
             <h6 class="heading">Sapien lobortis nec</h6>
-            <article><a href="#"><img class="btmspace-15" src="{{ asset('layout/images/demo/320x140.png') }}" alt=""></a>
+            <article><a href="#"><img class="btmspace-15" src="{{ asset('main/images/demo/320x140.png') }}" alt=""></a>
                 <h6 class="nospace font-x1"><a href="#">Velit pellentesque</a></h6>
                 <time class="font-xs block btmspace-10" datetime="2045-04-05">Thursday, 5<sup>th</sup> April 2045</time>
                 <p class="nospace">Eget nisl mauris placerat mauris a semper posuere sem arcu cursus felis non cursus enim odio in maecenas ut justo [&hellip;]</p>
@@ -131,8 +131,8 @@
 <!-- ################################################################################################ -->
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
-<script src="{{ asset('layout/scripts/jquery.min.js') }}"></script>
-<script src="{{ asset('layout/scripts/jquery.backtotop.js') }}"></script>
-<script src="{{ asset('layout/scripts/jquery.mobilemenu.js') }}"></script>
+<script src="{{ asset('main/scripts/jquery.min.js') }}"></script>
+<script src="{{ asset('main/scripts/jquery.backtotop.js') }}"></script>
+<script src="{{ asset('main/scripts/jquery.mobilemenu.js') }}"></script>
 </body>
 </html>

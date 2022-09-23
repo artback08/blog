@@ -43,7 +43,7 @@
                         <i class="nav-icon fas fa-fire"></i>
                         <p>
                             Посты
-                            <span class="right badge badge-danger">0</span>
+                            <span class="right badge badge-primary">0</span>
                         </p>
                     </a>
                 </li>
@@ -52,7 +52,7 @@
                         <i class="nav-icon fas fa-list"></i>
                         <p>
                             Категории
-                            <span class="right badge badge-danger">0</span>
+                            <span class="right badge badge-danger">{{ \App\Models\Category::all()->count() }}</span>
                         </p>
                     </a>
                 </li>
@@ -61,7 +61,7 @@
                         <i class="nav-icon fas fa-tag"></i>
                         <p>
                             Тэги
-                            <span class="right badge badge-danger">0</span>
+                            <span class="right badge badge-success">0</span>
                         </p>
                     </a>
                 </li>
@@ -70,7 +70,7 @@
                         <i class="nav-icon fas fa-users"></i>
                         <p>
                             Блогеры
-                            <span class="right badge badge-danger">0</span>
+                            <span class="right badge badge-warning">0</span>
                         </p>
                     </a>
                 </li>

@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="{{ asset('dashboard/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('dashboard/dist/css/adminlte.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/plugins/toastr/toastr.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/dist/css/my.css') }}">
 </head>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
@@ -102,6 +104,8 @@
 <script src="{{ asset('dashboard/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap -->
 <script src="{{ asset('dashboard/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('dashboard/plugins/toastr/toastr.min.js') }}"></script>
+
 <!-- overlayScrollbars -->
 <script src="{{ asset('dashboard/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 <!-- AdminLTE App -->
@@ -120,5 +124,8 @@
 <script src="{{ asset('dashboard/dist/js/demo.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('dashboard/dist/js/pages/dashboard2.js') }}"></script>
+
+@include('admin.layouts.toastr');
+
 </body>
 </html>

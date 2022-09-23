@@ -35,91 +35,29 @@
                                 <th style="width: 10px">#ID</th>
                                 <th>Название</th>
                                 <th>Соотношение к постам</th>
-                                <th style="width: 40px">Label</th>
+                                <th style="width: 40px">Посты</th>
+                                <th style="width: 40px">Правка</th>
                             </tr>
                             </thead>
                             <tbody>
+                            @foreach($categories as $category)
                             <tr>
-                                <td>1.</td>
-                                <td>Update software</td>
-                                <td>
-                                    <div class="progress progress-xs">
-                                        <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                                    </div>
-                                </td>
-                                <td><span class="badge bg-danger">55%</span></td>
-                            </tr>
-                            <tr>
-                                <td>2.</td>
-                                <td>Clean database</td>
-                                <td>
-                                    <div class="progress progress-xs">
-                                        <div class="progress-bar bg-warning" style="width: 1%"></div>
-                                    </div>
-                                </td>
-                                <td><span class="badge bg-warning">1%</span></td>
-                            </tr>
-                            <tr>
-                                <td>3.</td>
-                                <td>Cron job running</td>
-                                <td>
-                                    <div class="progress progress-xs progress-striped active">
-                                        <div class="progress-bar bg-primary" style="width: 30%"></div>
-                                    </div>
-                                </td>
-                                <td><span class="badge bg-primary">30%</span></td>
-                            </tr>
-                            <tr>
-                                <td>4.</td>
-                                <td>Fix and squish bugs</td>
+                                <td>{{ $category->id }}</td>
+                                <td>{{ $category->title }}</td>
                                 <td>
                                     <div class="progress progress-xs progress-striped active">
                                         <div class="progress-bar bg-success" style="width: 90%"></div>
                                     </div>
                                 </td>
                                 <td><span class="badge bg-success">90%</span></td>
+                                <td class="d-flex justify-content-between">
+                                    <a href="" class="btn btn-icon color-warning" title="Редактировать категорию"><i class="nav-icon fas fa-solid fa-pen"></i></a>
+                                    <a href="" class="btn btn-icon color-danger" title="Удалить категорию"><i class="nav-icon fas fa-solid fa-trash"></i></a>
+                                </td>
                             </tr>
+                            @endforeach
 
-                            <tr>
-                                <td>1.</td>
-                                <td>Update software</td>
-                                <td>
-                                    <div class="progress progress-xs">
-                                        <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                                    </div>
-                                </td>
-                                <td><span class="badge bg-danger">55%</span></td>
-                            </tr>
-                            <tr>
-                                <td>2.</td>
-                                <td>Clean database</td>
-                                <td>
-                                    <div class="progress progress-xs">
-                                        <div class="progress-bar bg-warning" style="width: 1%"></div>
-                                    </div>
-                                </td>
-                                <td><span class="badge bg-warning">1%</span></td>
-                            </tr>
-                            <tr>
-                                <td>3.</td>
-                                <td>Cron job running</td>
-                                <td>
-                                    <div class="progress progress-xs progress-striped active">
-                                        <div class="progress-bar bg-primary" style="width: 30%"></div>
-                                    </div>
-                                </td>
-                                <td><span class="badge bg-primary">30%</span></td>
-                            </tr>
-                            <tr>
-                                <td>4.</td>
-                                <td>Fix and squish bugs</td>
-                                <td>
-                                    <div class="progress progress-xs progress-striped active">
-                                        <div class="progress-bar bg-success" style="width: 90%"></div>
-                                    </div>
-                                </td>
-                                <td><span class="badge bg-success">90%</span></td>
-                            </tr>
+
                             </tbody>
                         </table>
                     </div>
@@ -139,11 +77,16 @@
                     <div class="card-header">
                         <h3 class="card-title">Добавление категории</h3>
                     </div>
-                    <form>
+                    <form action="{{ route('admin.category.store') }}" method="POST">
+                        @csrf
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Название категории</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Название">
+                                <label for="category_title">Название категории</label>
+                                <input type="text" name="title" class="form-control" id="category_title" placeholder="Название">
+                                @error('title')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @php session()->put('error','Название категории не может быть пустым.'); @endphp
+                                @enderror
                             </div>
                         </div>
 
